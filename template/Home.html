@@ -1,0 +1,63 @@
+$def with (new_posts)
+
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/swag.css" />
+</head>
+<body>
+<div class="container">
+    $if session['user'] == None:
+        <div class="row">
+            <div class="col-md-4">
+                <h1><strong>Covid Warriors</strong></h1><br />
+                <h3>A form where people hit by the pandemic reach out to help each other </h3>
+            </div>
+            <div class="col">
+                <div class="bg-image" style="background:url('/static/img/hope.png'); height:22rem"></div>
+            </div>
+        </div>
+    $else:
+    <!-- <h1>Hello $session['user']['name']</h1>-->
+    <div class="row">
+        <ul class="col-md-3">
+            <li class="active list-unstyled"><a href="#"><span class="material-icons">home</span>Home Feed</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">account_circle</span>Profile</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">message</span>Messages</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">people</span>Friends</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">local_library</span>Communities</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">notifications</span>Notifications</a></li>
+            <div class="sidebar col-md-8"> <li class="solid list-unstyled"></li> </div>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">settings</span>Settings</a></li>
+            <li class= "list-unstyled"> <a href="#"><span class="material-icons">help</span>Help</a></li>
+        </ul>
+        <div class="col-md-6">
+            <div class="post-box">
+                <form id="postactivity">
+                    <textarea name="content" class="post-input" placeholder="What's new, $session['user']['name']?"></textarea>
+                    <button type="submit" id="post-button" class="btn btn-info btn-raised waves-effect"><span class="mdi mdi-send"></span>Post</button>
+                </form>
+            </div>
+            $for post in new_posts:
+            $if session['user']['username'] == post['username']:
+                <div class="post-card">
+                    <div class="header">
+                        <div class="avatar">
+                            <a href="/profile">$session['user']['username']&nbsp;&nbsp;&nbsp;</a>
+                            <h7 style="color:grey">$post['timestamp']</h7>
+                        </div>
+                        <div class="content">
+                            $post['content']
+                        </div>
+                        <div class="footer">
+                            <button class="btn btn-round waves-effect btn-default btn-raised btn-like"><span class="material-icons">thumb_up_off_alt</span></button>
+                            <button class="btn btn-round waves-effect btn-default btn-raised btn-like"><span class="material-icons">chat_bubble_outline</span></button>
+                            <button class="btn btn-round waves-effect btn-default btn-raised btn-like"><span class="material-icons">shortcut</span></button>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>

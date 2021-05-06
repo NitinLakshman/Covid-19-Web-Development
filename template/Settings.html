@@ -1,0 +1,111 @@
+<html>
+<head>
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link rel="stylesheet" href="static/css/swag.css" />
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.css" rel="stylesheet"/>
+    <script type="text/javascript" src="https://cdnjs.cloudflare.com/ajax/libs/mdb-ui-kit/3.3.0/mdb.min.js"></script>
+
+<style>
+.avat {
+  vertical-align: middle;
+  width: 50px;
+  height: 50px;
+  border-radius: 50%;
+}
+</style>
+</head>
+<body>
+<div class="container">
+    <div class="row">
+        <ul class="col-md-3">
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">home</span>Home Feed</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">account_circle</span>Profile</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">message</span>Messages</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">people</span>Friends</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">local_library</span>Communities</a></li>
+            <li class= "list-unstyled"><a href="#"><span class="material-icons">notifications</span>Notifications</a></li>
+            <div class="sidebar col-md-8">
+                <li class="solid list-unstyled"></li>
+            </div>
+            <li class= "active list-unstyled"><a href="#"><span class="material-icons">settings</span>Settings</a></li>
+            <li class= "list-unstyled"> <a href="#"><span class="material-icons">help</span>Help</a></li>
+        </ul>
+        <div class="col-md-8" >
+            <div class="profile-header" >
+                <div class="bg-image" style="background:url('/static/img/881656.jpg'); height:15rem"><br /><br />
+                    <div class="avatar">
+                        <img src="/static/img/nitin.jpg" class="avat"/>
+                        <h1 class="profile-name">$session['user']['name']</h1>
+                        <span class="profile-headline">Lv 20 Warrior</span>
+                    </div>
+                </div>
+                <div class="profile-nav">
+                    <ul class="nav navbar-nav navbar-center list-group list-group-horizontal">
+                        <li><a href="/profile/nitin">Activity &nbsp; &nbsp;</a></li>
+                        <li><a href="/profile/nitin/info">Info &nbsp; &nbsp;</a></li>
+                        <li><a href="/profile/nitin/code">Code &nbsp; &nbsp;</a></li>
+                        <li><a href="/profile/nitin/contact">Contact</a></li>
+                    </ul>
+                </div>
+            </div>
+            <div class="col-md-8" >
+                <form id="updateform"><br />
+                    <h2 class="post-title">Basic info</h2>
+                    <span class="post-subtitle">Name</span>
+                    <p><input name="name" class="form-control no-border" value="$session['user']['name']"/></p>
+                    <span class="post-subtitle">About</span>
+                    <p><input name="about" class="form-control no-border" value="$session['user']['about']"/></p>
+                    <span class="post-subtitle">Hobbies</span>
+                    <p><input name="hobbies" class="form-control no-border" value="$session['user']['hobbies']"/></p>
+                    <span class="post-subtitle">Birthday</span>
+                    <p><input name="birthday" class="form-control no-border" value="$session['user']['birthday']"/></p>
+                    <button type="submit" class="btn btn-info btn-raised">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+
+<!--
+<div class="row">
+    <div class="col-md-8">
+        <div class="grid">
+            <div class="grid-sizer"></div>
+            <div class="post-card extra-padding">
+                <form id="updateform">
+                    <h2 class="post-title">Basic info</h2>
+                    <span class="post-subtitle">Name</span>
+                    <p><input name="name" class="form-control no-border" value="$session['user']['name']"/></p>
+                    <span class="post-subtitle">About</span>
+                    <p><input name="about" class="form-control no-border" value="$session['user']['about']"/></p>
+                    <span class="post-subtitle">Hobbies</span>
+                    <p><input name="hobbies" class="form-control no-border" value="$session['user']['hobbies']"/></p>
+                    <span class="post-subtitle">Birthday</span>
+                    <p><input name="birthday" class="form-control no-border" value="$session['user']['birthday']"/></p>
+                    <button type="submit" class="btn btn-info btn-raised">Save</button>
+                </form>
+            </div>
+        </div>
+    </div>
+</div>
+</div>
+
+<div class="row">
+    <div class="col-sm-10">
+        <div class="card bg-dark text-white" style="height: 10rem;">
+            <img src="/static/img/background.jpg" class="card-img" alt="...">
+            <div class="card-img-overlay">
+                <div class="avatar">
+                    <img src="/static/img/nitin.jpg" class="profile-avatar"/>
+                    <h5 class="card-title">$session['user']['name']</h5>
+                    <p class="card-text">Lv 1 Programmer</p>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+</body>
+</html>
+-->
